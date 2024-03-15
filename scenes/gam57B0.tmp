@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d073qqmn63gul"]
+[gd_scene load_steps=6 format=3 uid="uid://d073qqmn63gul"]
 
 [ext_resource type="PackedScene" uid="uid://sdj2tdmny8j1" path="res://scenes/player.tscn" id="1_toplp"]
 [ext_resource type="Texture2D" uid="uid://b2sp5dmioh4fo" path="res://assets/tileset.png" id="2_cda6e"]
 [ext_resource type="PackedScene" uid="uid://rg7er3sinc12" path="res://scenes/water_drop.tscn" id="3_6yv7i"]
-[ext_resource type="PackedScene" uid="uid://dipfgqdct4l5d" path="res://scenes/flower.tscn" id="4_0mnuv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sj6lh"]
 texture = ExtResource("2_cda6e")
@@ -18,6 +17,9 @@ sources/0 = SubResource("TileSetAtlasSource_sj6lh")
 
 [node name="game_root" type="Node"]
 
+[node name="Player" parent="." instance=ExtResource("1_toplp")]
+position = Vector2(583, 274)
+
 [node name="Art" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Art"]
@@ -30,23 +32,5 @@ layer_0/tile_data = PackedInt32Array(458752, 65536, 1, 458753, 65536, 1, 458754,
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Flower" parent="." instance=ExtResource("4_0mnuv")]
-position = Vector2(574, 447)
-
-[node name="Player" parent="." instance=ExtResource("1_toplp")]
-position = Vector2(583, 274)
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="PlayerWater" type="Label" parent="UI"]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="WaterDrop2" parent="." instance=ExtResource("3_6yv7i")]
-position = Vector2(349, 254)
-
 [node name="WaterDrop" parent="." instance=ExtResource("3_6yv7i")]
 position = Vector2(395, 324)
-
-[node name="WaterDrop3" parent="." instance=ExtResource("3_6yv7i")]
-position = Vector2(235, 319)
