@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://rg7er3sinc12"]
+
+[ext_resource type="Texture2D" uid="uid://bw5ugmfcw6i7p" path="res://assets/atlassheet.png" id="1_mm04e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hjba"]
+atlas = ExtResource("1_mm04e")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ijdfm"]
+radius = 7.25
+
+[node name="WaterDrop" type="RigidBody2D"]
+position = Vector2(0, -19)
+collision_layer = 4
+
+[node name="WaterDropSprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_5hjba")
+
+[node name="WaterDropCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_ijdfm")

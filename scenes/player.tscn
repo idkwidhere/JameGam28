@@ -1,10 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://sdj2tdmny8j1"]
+[gd_scene load_steps=4 format=3 uid="uid://sdj2tdmny8j1"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_f6lga"]
+[ext_resource type="Texture2D" uid="uid://cc17voa55gitg" path="res://assets/sunflowerseed.png" id="1_kua6m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cynur"]
+radius = 5.5
+height = 14.5
 
 [node name="Player" type="CharacterBody2D"]
-
-[node name="PlayerCollider" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_cynur")
+position = Vector2(0, -31)
+scale = Vector2(4, 4)
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_f6lga")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_kua6m")
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.75)
+shape = SubResource("CapsuleShape2D_cynur")
